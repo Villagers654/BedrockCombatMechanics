@@ -58,13 +58,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--SPARTAN API-->
-        <dependency>
-            <groupId>me.vagdedes</groupId>
-            <artifactId>spartan-api</artifactId>
-            <version>190</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
     <build>
         <defaultGoal>clean package</defaultGoal>
