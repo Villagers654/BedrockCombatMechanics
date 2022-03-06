@@ -2,7 +2,6 @@ package kernitus.plugin.OldCombatMechanics.module;
 
 import kernitus.plugin.OldCombatMechanics.OCMMain;
 import kernitus.plugin.OldCombatMechanics.utilities.MathHelper;
-import me.vagdedes.spartan.system.Enums;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.EntityType;
@@ -27,8 +26,6 @@ public class ModulePlayerRegen extends Module {
 
     public ModulePlayerRegen(OCMMain plugin) {
         super(plugin, "old-player-regen");
-
-        initSpartan();
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -71,7 +68,6 @@ public class ModulePlayerRegen extends Module {
         if (playerHealth < maxHealth) {
             p.setHealth(MathHelper.clamp(playerHealth + module().getInt("amount"), 0.0, maxHealth));
             healTimes.put(playerId, currentTime);
-            if(spartanInstalled) disableSpartanRegenCheck(p);
         }
 
         // Calculate new exhaustion value, must be between 0 and 4. If above, it will reduce the saturation in the following tick.
@@ -83,19 +79,5 @@ public class ModulePlayerRegen extends Module {
             debug("Exh before: " + previousExhaustion + " Now: " + p.getExhaustion() +
                     " Sat now: " + previousSaturation, p);
         }, 1L);
-    }
-
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent e) {
-        healTimes.remove(e.getPlayer().getUniqueId());
-    }
-
-    private void disableSpartanRegenCheck(Player player) {
-        final int ticksToCancel = plugin.getConfig().getInt("support.spartan-cancel-ticks", 1);
-        me.vagdedes.spartan.api.API.cancelCheck(player, Enums.HackType.FastHeal, ticksToCancel);
-    }
-
-    private void initSpartan() {
-        spartanInstalled = Bukkit.getPluginManager().getPlugin("Spartan") != null;
     }
 }
