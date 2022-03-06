@@ -35,8 +35,8 @@ public class ModuleOldArmourStrength extends Module {
             EntityDamageEvent.DamageCause.STARVATION,
             EntityDamageEvent.DamageCause.FALL,
             EntityDamageEvent.DamageCause.MAGIC,
-            EntityDamageEvent.DamageCause.LIGHTNING
-            EntityDamageEvent.DamageCause.ENTITY_EXPLOSION,
+            EntityDamageEvent.DamageCause.LIGHTNING,
+            EntityDamageEvent.DamageCause.ENTITY_EXPLOSION
     );
 
     static {
