@@ -30,12 +30,12 @@ disable-attack-cooldown:
   enabled: true
   worlds: []
   # What to set the attack speed to. Default for 1.9 is 4, at least 16 is needed for no cooldown.
-  generic-attack-speed: 24
+  generic-attack-speed: 20
 
 disable-player-collisions:
   # This is to disable player collisions
   # This is now compatible with scoreboard and tablist-editing plugins
-  enabled: false
+  enabled: true
   worlds: []
 
 disable-sword-sweep:
@@ -58,7 +58,7 @@ disable-attack-sounds:
 
 disable-crafting:
   # Disable the crafting of specified items
-  enabled: true
+  enabled: false
   worlds: []
   # List of denied items
   denied: [shield]
@@ -72,14 +72,14 @@ disable-offhand:
   enabled: true
   worlds: []
   # Whether the following list allows items or blocks them
-  whitelist: true
+  whitelist: false
   # List of items that should be allowed/blocked
   # Example: [diamond_sword,BOW]
   items: []
 
 old-brewing-stand:
   # Automatically refuels brewing stands
-  enabled: true
+  enabled: false
   worlds: []
 
 no-lapis-enchantments:
@@ -96,12 +96,12 @@ disable-elytra:
 
 disable-enderpearl-cooldown:
   # Disables enderpearl cooldown
-  enabled: true
+  enabled: false
   worlds: []
   # The cooldown, in seconds
-  cooldown: 0
+  cooldown: 1
   # Show the user a message if they try to use an enderpearl and the cooldown has not expired yet
-  showMessage: true
+  showMessage: false
   message: "&cYou must wait &7%ds&c before using an enderpearl again!"
 
 old-tool-damage:
@@ -142,16 +142,16 @@ old-tool-damage:
     DIAMOND_PICKAXE: 6
     NETHERITE_PICKAXE: 7
     # Hoe damages
-    GOLD_HOE: 1
-    WOOD_HOE: 1
-    STONE_HOE: 1
-    IRON_HOE: 1
-    DIAMOND_HOE: 1
-    NETHERITE_HOE: 1
+    GOLD_HOE: 3
+    WOOD_HOE: 3
+    STONE_HOE: 4
+    IRON_HOE: 5
+    DIAMOND_HOE: 6
+    NETHERITE_HOE: 7
 
 sword-blocking:
   # This is to allow players to block with swords again, by getting a shield while they hold right click with a sword
-  enabled: true
+  enabled: false
   worlds: []
   # How often, in ticks, OCM should check if the player is still blocking with a shield, and remove it if not
   # If this is too fast the player will have their shield disappear before they're able to block again causing a slight delay
@@ -165,7 +165,7 @@ sword-blocking:
 
 shield-damage-reduction:
   # This module allows changing the damage reduction behaviour of shields
-  enabled: true
+  enabled: false
   # How much damage blocking should reduce
   # This can either be a number in half-hearts (e.g 2) or a percentage (e.g. 20%)
   # 1.8 default: (damage - 1) * 50%             1.9 default: 33%
@@ -206,7 +206,7 @@ old-golden-apples:
     #   Eating a normal apple will prevent any *normal* apple type from being eaten before the normal cooldown is over
     is-shared: false
   # If you want to allow enchanted golden apple crafting
-  enchanted-golden-apple-crafting: true
+  enchanted-golden-apple-crafting: false
   # Enabling this makes the potion effects gained by eating golden apples
   # and enchanted golden apples the same as it was in pre-1.9
   old-potion-effects: true
@@ -233,14 +233,14 @@ old-golden-apples:
       amplifier: 0
     absorption:
       duration: 2400
-      amplifier: 0
+      amplifier: 3
   # Enable this if you have another plugin which adds a crafting recipe for
   # enchanted golden apples (requires server restart)
   no-conflict-mode: false
 
 old-fishing-knockback:
   # This is to make the knockback of players when they get hit by a fishing bobber the same as it was in pre-1.9
-  enabled: true
+  enabled: false
   worlds: []
   # This makes OCM check if other plugins are stopping the rod damage and follow their choice
   # Set to false to always have rod damage
@@ -262,7 +262,7 @@ fishing-rod-velocity:
   # In 1.9+ fishing rods go 8 blocks instead of 12 blocks
   # This is due to both gravity and initial launch speed
   # Set to true to revert back to the old calculations and gravity
-  enabled: true
+  enabled: false
   worlds: []
 
 projectile-knockback:
