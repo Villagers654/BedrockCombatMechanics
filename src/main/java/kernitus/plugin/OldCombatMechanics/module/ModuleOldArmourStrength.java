@@ -157,8 +157,6 @@ public class ModuleOldArmourStrength extends Module {
 
             return damageCauses;
         }, 1.25, Enchantment.PROTECTION_FIRE),
-        BLAST_PROTECTION(() -> EnumSet.of(
-        ), 1.5, Enchantment.PROTECTION_EXPLOSIONS),
         PROJECTILE_PROTECTION(() -> EnumSet.of(
                 EntityDamageEvent.DamageCause.PROJECTILE
         ), 1.5, Enchantment.PROTECTION_PROJECTILE),
