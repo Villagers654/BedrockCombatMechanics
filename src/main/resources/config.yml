@@ -30,7 +30,7 @@ disable-attack-cooldown:
   enabled: true
   worlds: []
   # What to set the attack speed to. Default for 1.9 is 4, at least 16 is needed for no cooldown.
-  generic-attack-speed: 20
+  generic-attack-speed: 24
 
 disable-player-collisions:
   # This is to disable player collisions
@@ -72,10 +72,10 @@ disable-offhand:
   enabled: true
   worlds: []
   # Whether the following list allows items or blocks them
-  whitelist: false
+  whitelist: true
   # List of items that should be allowed/blocked
   # Example: [diamond_sword,BOW]
-  items: []
+  items: [shield,totem_of_undying]
 
 old-brewing-stand:
   # Automatically refuels brewing stands
