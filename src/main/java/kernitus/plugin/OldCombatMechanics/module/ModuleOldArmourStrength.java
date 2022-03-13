@@ -36,7 +36,6 @@ public class ModuleOldArmourStrength extends Module {
             EntityDamageEvent.DamageCause.FALL,
             EntityDamageEvent.DamageCause.MAGIC,
             EntityDamageEvent.DamageCause.LIGHTNING,
-            EntityDamageEvent.DamageCause.BLOCK_EXPLOSION,
             EntityDamageEvent.DamageCause.ENTITY_EXPLOSION
     );
 
@@ -134,6 +133,7 @@ public class ModuleOldArmourStrength extends Module {
                     EntityDamageEvent.DamageCause.POISON,
                     EntityDamageEvent.DamageCause.MAGIC,
                     EntityDamageEvent.DamageCause.WITHER,
+                    EntityDamageEvent.DamageCause.BLOCK_EXPLOSION,
                     EntityDamageEvent.DamageCause.FALLING_BLOCK,
                     EntityDamageEvent.DamageCause.THORNS,
                     EntityDamageEvent.DamageCause.DRAGON_BREATH
@@ -157,6 +157,9 @@ public class ModuleOldArmourStrength extends Module {
 
             return damageCauses;
         }, 1.25, Enchantment.PROTECTION_FIRE),
+        BLAST_PROTECTION(() -> EnumSet.of(
+                EntityDamageEvent.DamageCause.BLOCK_EXPLOSION
+        ), 1.5, Enchantment.PROTECTION_EXPLOSIONS),
         PROJECTILE_PROTECTION(() -> EnumSet.of(
                 EntityDamageEvent.DamageCause.PROJECTILE
         ), 1.5, Enchantment.PROTECTION_PROJECTILE),
