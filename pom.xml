@@ -30,6 +30,10 @@
             <id>CodeMC</id>
             <url>https://repo.codemc.org/repository/maven-public</url>
         </repository>
+        <repository>
+           <id>papermc</id>
+           <url>https://papermc.io/repo/repository/maven-public/</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -43,6 +47,12 @@
             <artifactId>bstats-bukkit</artifactId>
             <version>1.8</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.18.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <!--Shaded in by bukkit -->
         <dependency>
